@@ -58,6 +58,7 @@ public class StepCountingService extends Service implements SensorEventListener 
             manager.createNotificationChannel(channel);
         }
 
+        //바로 밑에 빨간줄은 무시해도 됨
         Notification.Builder builder = new Notification.Builder(this, CHANNEL_ID)
                 .setContentTitle("만보기가 정상적으로 작동중이에요")
                 .setSmallIcon(R.mipmap.ic_icons)
