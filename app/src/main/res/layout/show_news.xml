@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="건강 뉴스"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/cafe24ssurround"
+            android:layout_gravity="left">
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/loadMessage1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="뉴스를 스크랩하고 있어요..."
+            android:textSize="28sp"
+            android:gravity="center"></TextView>
+
+        <TextView
+            android:id="@+id/loadMessage2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="인터넷 상황에 따라 시간이 걸릴 수 있어요"
+            android:textColor="#6E6E6E"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="80dp"></TextView>
+
+
+<LinearLayout
+    android:id="@+id/mainGroup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_below="@id/custom_toolbar">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/custom_toolbar"
+        android:text="실시간으로 스크랩 한 뉴스에요"
+        android:textSize="28sp"></TextView>
+
+    <TextView
+        android:id="@+id/subTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="10dp"
+        android:text="클릭하면 기사를 자세하게 볼 수 있어요"
+        android:textColor="#6E6E6E"
+        android:textSize="20sp"></TextView>
+
+    <ScrollView
+        android:id="@+id/sugar_mangement"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/subTitle"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/newsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clipToPadding="false"
+                />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</LinearLayout>
+</RelativeLayout>

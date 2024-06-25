@@ -1,0 +1,183 @@
+<!-- res/layout/dialog_input.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="체중 상세조회"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/cafe24ssurround"
+            android:layout_gravity="left">
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/group1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/custom_toolbar"
+        android:background="@drawable/border_background"
+        android:elevation="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="조건 설정 후 검색 해 보세요!"
+            android:textSize="25sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="조건이 없으면 모든 데이터가 나와요."
+            android:textSize="20sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:layout_below="@id/title"
+            android:textColor="#6E6E6E"
+            />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        app:boxBackgroundMode="outline"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/dateStart"
+        android:layout_below="@id/subTitle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:id="@+id/inputStartDate"
+            android:hint="시작날짜"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:paddingTop="5dp"
+            android:paddingBottom="0dp"
+            android:layout_below="@id/subTitle"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="2dp"
+        android:layout_toRightOf="@id/dateStart"
+        android:id="@+id/line"
+        android:background="@color/black"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_below="@id/subTitle">
+    </View>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_toRightOf="@id/line"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:boxBackgroundMode="outline"
+        android:id="@+id/dateEnd"
+        android:layout_below="@id/subTitle">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:id="@+id/inputEndDate"
+            android:hint="종료날짜"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:paddingTop="5dp"
+            android:paddingBottom="0dp"
+            android:layout_below="@id/subTitle"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--<ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/search"
+        android:layout_toRightOf="@id/dateEnd"
+        android:id="@+id/search"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/title">
+    </ImageView>-->
+        <Button
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="검색"
+            android:background="@drawable/border_background"
+            android:textSize="20sp"
+            android:layout_below="@id/dateStart"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            ></Button>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+        android:background="@drawable/border_background"
+        android:layout_below="@id/group1"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/scrView"
+        android:elevation="10dp"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="체중 내역"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_margin="10dp"></TextView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/showRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateStart"
+            android:clipToPadding="false"
+            />
+        </LinearLayout>
+    </ScrollView>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/scrView"
+        ></View>
+
+
+
+</RelativeLayout>

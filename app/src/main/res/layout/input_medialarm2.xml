@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/weight_Management"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".HomeFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mainColor"
+            app:title="복약 알림 설정"
+            app:titleTextColor="@color/white"></androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_toolbar"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/custom_toolbar">
+
+                <RelativeLayout
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/titleTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="알람 이름을 입력 하세요"
+                        android:textSize="28sp"></TextView>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputName"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_below="@id/titleTitle"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editNameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view1">
+
+                    <TextView
+                        android:id="@+id/titleDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="복용 기간을 선택하세요."
+                        android:textSize="28sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/titleDateSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleDate"
+                        android:layout_marginLeft="20dp"
+                        android:text="오늘을 기준으로 종료시점을 선택하면 돼요!"
+                        android:textColor="#6E6E6E"
+                        android:textSize="20sp"></TextView>
+
+                    <LinearLayout
+                        android:id="@+id/dateSet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleDateSub"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/day3"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/border_background_date"
+                            android:paddingLeft="25dp"
+                            android:paddingBottom="5dp"
+                            android:text="3일"
+                            android:textSize="22sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/day5"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/border_background_date"
+                            android:paddingLeft="25dp"
+                            android:paddingBottom="5dp"
+                            android:text="5일"
+                            android:textSize="22sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/day7"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/border_background_date"
+                            android:paddingLeft="25dp"
+                            android:paddingBottom="5dp"
+                            android:text="7일"
+                            android:textSize="22sp"></TextView>
+
+                        <TextView
+                            android:id="@+id/dayEvery"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
+                            android:background="@drawable/border_background_date"
+                            android:paddingLeft="20dp"
+                            android:paddingBottom="5dp"
+                            android:text="평생"
+                            android:textSize="22sp"></TextView>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/daySet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/dateSet"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/border_background_date"
+                        android:paddingLeft="130dp"
+                        android:text="직접 설정"
+                        android:textSize="25sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/showDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/daySet"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="40dp"
+                        android:text="복용기간: "
+                        android:textSize="23sp"></TextView>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view2"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
+                        android:id="@+id/titleTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="복용 시간을 설정하세요."
+                        android:textSize="28sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/titleTimeSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleTime"
+                        android:layout_marginLeft="20dp"
+                        android:text="선택한 시간에 알림이 울려요!"
+                        android:textColor="#6E6E6E"
+                        android:textSize="20sp"></TextView>
+
+                    <LinearLayout
+                        android:id="@+id/timeSet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleTimeSub"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_morning"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_morning" />
+
+                                <TextView
+                                    android:id="@+id/cardName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_toRightOf="@id/item_image"
+                                    android:text="아침"
+                                    android:textSize="23sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="140dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_toRightOf="@id/cardName"
+                                    android:text="06:00"
+                                    android:textSize="35sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_noon"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image2"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_noon" />
+
+                                <TextView
+                                    android:id="@+id/cardName2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_toRightOf="@id/item_image2"
+                                    android:text="점심"
+                                    android:textSize="23sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="140dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_toRightOf="@id/cardName2"
+                                    android:text="12:00"
+                                    android:textSize="35sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_evening"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image3"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_evening" />
+
+                                <TextView
+                                    android:id="@+id/cardName3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_toRightOf="@id/item_image3"
+                                    android:text="저녁"
+                                    android:textSize="23sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="140dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_toRightOf="@id/cardName3"
+                                    android:text="18:00"
+                                    android:textSize="35sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_night"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image4"
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="10dp"
+                                    android:src="@drawable/ic_night" />
+
+                                <TextView
+                                    android:id="@+id/cardName4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginTop="15dp"
+                                    android:layout_toRightOf="@id/item_image4"
+                                    android:text="취침 전"
+                                    android:textSize="23sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="113dp"
+                                    android:layout_marginTop="7dp"
+                                    android:layout_toRightOf="@id/cardName4"
+                                    android:text="00:00"
+                                    android:textSize="35sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <!--<LinearLayout
+                        android:id="@+id/timeSet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleTimeSub"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_morning"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/ic_morning" />
+
+                                <TextView
+                                    android:id="@+id/cardName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@id/item_image"
+                                    android:text="아침(06:00~11:59)"
+                                    android:textSize="25sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/cardName"
+                                    android:layout_marginLeft="70dp"
+                                    android:layout_marginTop="-12dp"
+                                    android:layout_toRightOf="@id/item_image"
+                                    android:text="06:00"
+                                    android:textSize="40sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_noon"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image2"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/ic_noon" />
+
+                                <TextView
+                                    android:id="@+id/cardName2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@id/item_image2"
+                                    android:text="점심(12:00~17:59)"
+                                    android:textSize="25sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/cardName2"
+                                    android:layout_marginLeft="70dp"
+                                    android:layout_marginTop="-12dp"
+                                    android:layout_toRightOf="@id/item_image2"
+                                    android:text="12:00"
+                                    android:textSize="40sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_evening"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image3"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/ic_evening" />
+
+                                <TextView
+                                    android:id="@+id/cardName3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@id/item_image3"
+                                    android:text="저녁(18:00~23:59)"
+                                    android:textSize="25sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/cardName3"
+                                    android:layout_marginLeft="70dp"
+                                    android:layout_marginTop="-12dp"
+                                    android:layout_toRightOf="@id/item_image3"
+                                    android:text="18:00"
+                                    android:textSize="40sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_night"
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_below="@id/lineChart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_toRightOf="@id/card_view"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="3dp"
+                            card_view:cardBackgroundColor="@color/white"
+                            card_view:cardCornerRadius="12dp"
+                            card_view:cardElevation="7dp">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginRight="20dp">
+
+                                <ImageView
+                                    android:id="@+id/item_image4"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginTop="5dp"
+                                    android:src="@drawable/ic_night" />
+
+                                <TextView
+                                    android:id="@+id/cardName4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@id/item_image4"
+                                    android:text="심야(00:00~05:59)"
+                                    android:textSize="25sp" />
+
+                                <TextView
+                                    android:id="@+id/cardTime4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@id/cardName4"
+                                    android:layout_marginLeft="70dp"
+                                    android:layout_marginTop="-12dp"
+                                    android:layout_toRightOf="@id/item_image4"
+                                    android:text="00:00"
+                                    android:textSize="40sp"></TextView>
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>-->
+                </RelativeLayout>
+
+                <!--240519추가 주석<RelativeLayout
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view3">
+
+                    <TextView
+                        android:id="@+id/titleMedi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="복용하려는 약을 추가하세요"
+                        android:textSize="28sp"></TextView>
+
+                    <TextView
+                        android:id="@+id/titleMediSub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/titleMedi"
+                        android:layout_marginLeft="20dp"
+                        android:text="검색으로 실제 복용하는 약을 추가하세요!"
+                        android:textColor="#6E6E6E"
+                        android:textSize="20sp"></TextView>
+                </RelativeLayout>240519추가 주석-->
+
+                <!--<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view4"
+                    android:id="@+id/view5">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputMediName"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editMediInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:paddingTop="0dp"
+                            android:paddingBottom="0dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </RelativeLayout>-->
+                <!--<LinearLayout
+                    android:id="@+id/activity_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_below="@id/view4">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:weightSum="10">
+
+                        <EditText
+                            android:id="@+id/edit"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:hint="enter text to search"
+                            android:layout_marginLeft="20dp"/>
+
+                        <Button
+                            android:id="@+id/button"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:text="찾기"
+                            android:textSize="12sp"
+                            android:onClick="mOnClick"/>
+
+                    </LinearLayout>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/view5">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/mediRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/view5"
+                            android:clipToPadding="false"
+                            />
+                    </ScrollView>
+                </LinearLayout>-->
+                <!--240519추가 주석<RelativeLayout
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view4">
+
+                    <EditText
+                        android:id="@+id/edit"
+                        android:layout_width="270dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:hint="enter text to search" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="20dp"
+                        android:layout_toRightOf="@id/edit"
+                        android:onClick="mOnClick"
+                        android:text="찾기"
+                        android:textSize="12sp" />
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/edit"
+                        android:layout_marginBottom="20dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/mediRecyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/dateStart"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:clipToPadding="false"
+                            android:visibility="gone" />
+                    </ScrollView>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/takeMedi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view5"
+                    android:layout_marginLeft="20dp"
+                    android:text="섭취할 약:"
+                    android:textSize="23sp"></TextView>240519추가 주석-->
+
+                <TextView
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border_background_date"
+                    android:backgroundTint="@color/mainColor"
+                    android:gravity="center"
+                    android:text="저장"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"></TextView>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:layout_below="@id/btnSave"></View>
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>

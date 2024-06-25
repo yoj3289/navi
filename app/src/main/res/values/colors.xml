@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="selectedColor">#FF4081</color>
+    <color name="unselectedColor">#CCCCCC</color>
+    <!--<color name="mainColor">#001871 #088A29</color>-->
+    <color name="mainColor">#3498DB</color>
+    <!--<color name="mainColor">#D0A9F5</color>-->
+
+
+    <color name="DarkBlue">#08088A</color>
+    <color name="DarkRed">#8A0808</color>
+
+    <color name="LightGreen">#D0F5A9</color>
+    <color name="LightBlue">#81BEF7</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color">#3498DB</color> <!--채팅 테두리 색, 다른 색에 영향주면 지우기-->
+</resources>

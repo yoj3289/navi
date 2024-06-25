@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="가족">
+        <item>부모님</item>
+        <item>배우자</item>
+        <item>형제/자매</item>
+        <item>자녀</item>
+    </string-array>
+
+</resources>

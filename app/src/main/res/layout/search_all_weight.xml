@@ -1,0 +1,116 @@
+<!-- res/layout/dialog_input.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/popup_bg"
+    >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:gravity="center"
+        android:text="체중 상세조회"
+        android:textSize="30sp"
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+
+        />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/close"
+        android:layout_toRightOf="@id/title"
+        android:id="@+id/close"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
+    </ImageView>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="120dp"
+        android:layout_height="43dp"
+        android:layout_below="@id/title"
+        app:boxBackgroundMode="filled"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/dateStart">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="120dp"
+            android:layout_height="43dp"
+            android:id="@+id/inputStartDate"
+            android:hint="시작날짜"
+            android:focusable="false"
+            android:focusableInTouchMode="false"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="2dp"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/dateStart"
+        android:id="@+id/line"
+        android:background="@color/black"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp">
+    </View>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="120dp"
+        android:layout_height="43dp"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/line"
+        app:boxBackgroundMode="filled"
+        android:id="@+id/dateEnd">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="120dp"
+            android:layout_height="43dp"
+            android:id="@+id/inputEndDate"
+            android:hint="종료날짜" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/search"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/dateEnd"
+        android:id="@+id/search"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginTop="5dp">
+    </ImageView>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="500dp"
+
+        android:layout_below="@id/dateStart"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/scrView">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/showRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateStart"
+            android:background="@drawable/border_background"
+            android:clipToPadding="false"
+            />
+    </ScrollView>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/scrView"
+        ></View>
+
+
+
+</RelativeLayout>

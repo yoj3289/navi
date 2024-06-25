@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mainColor"
+        app:title="나비-Mini"
+        app:titleTextColor="@color/white"
+        >
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/custom_toolbar"
+        android:orientation="vertical"
+        android:weightSum="100">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/custom_toolbar"
+        android:id="@+id/chat_area"
+        android:layout_weight="90"
+        android:scrollbars="none"
+        >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/chatRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:clipToPadding="false"
+                android:layout_weight="80"
+                />
+    </ScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@id/chat_area"
+                android:orientation="horizontal"
+                android:layout_weight="10">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/chatRecyclerView"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="65dp"
+                android:id="@+id/inputChat"
+                app:boxStrokeWidth="5dp"
+                app:boxStrokeColor="@color/mainColor">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:id="@+id/editChatInput"
+
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/btnSend"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_toRightOf="@id/inputDate"
+                android:src="@drawable/ic_chat_on"
+                android:layout_marginLeft="-55dp"
+                android:layout_marginTop="5dp">
+            </ImageView>
+            </LinearLayout>
+    </LinearLayout>
+
+
+        </RelativeLayout>

@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/rootLayout"
+
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    >
+
+
+    <TextView
+        android:id="@+id/alarmTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="알람이름"
+
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="-5dp"
+        android:textSize="25sp"/>
+
+    <TextView
+        android:id="@+id/alarmPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@id/alarmTitle"
+        android:text="2024.01.01~2024.12.31"
+        android:textSize="15sp"
+        android:textColor="#6E6E6E">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/timeIcon"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="5dp">
+
+        <ImageView
+            android:id="@+id/morning"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_morning">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/noon"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_noon">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/evening"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_evening">
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/night"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_night">
+        </ImageView>
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line2"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/alarmPeriod"
+        android:background="@color/black"></View>
+</RelativeLayout>

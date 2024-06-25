@@ -1,0 +1,27 @@
+<!--안쓰는 코드 나중에 지우기-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_background"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="뉴스 타이틀"
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:textSize="30sp"/>
+
+    <TextView
+        android:id="@+id/newsContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="뉴스 내용"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:textSize="20sp"
+        android:layout_below="@id/newsTitle"/>
+</RelativeLayout>

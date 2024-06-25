@@ -1,0 +1,298 @@
+<!-- res/layout/dialog_input.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/alertTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이상탐지"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/cafe24ssurround"
+            android:layout_gravity="left">
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/custom_toolbar"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="5dp"
+                android:text="저장된 데이터 기반의 결과에요."
+
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/subTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="원하는 날짜를 기준으로 검색할 수 있어요."
+                android:textColor="#6E6E6E"
+                android:textSize="18sp" />
+
+            <RelativeLayout
+                android:id="@+id/group1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/subTitle"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/border_background"
+                android:elevation="5dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:id="@+id/dateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="기준일 "
+                    android:textSize="23sp"></TextView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dateStart"
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/dateTitle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputStartDate"
+                        android:layout_width="150dp"
+                        android:layout_height="45dp"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:paddingTop="0dp"
+                        android:paddingBottom="0dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/subDateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dateStart"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="탐지 결과에 아무것도 뜨지 않으면\n기준일에 저장된 데이터가 없다는 뜻이에요"
+                    android:textColor="#6E6E6E"
+                    android:textSize="20sp"></TextView>
+
+                <View
+                    android:id="@+id/blank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_below="@id/subDateTitle"
+                    android:layout_marginTop="10dp"></View>
+
+
+                <Button
+                    android:id="@+id/search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/subDateTitle"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/border_background"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:padding="0dp"
+                    android:text="검색"
+                    android:textSize="20sp"></Button>
+                <!--<ImageView
+                    android:id="@+id/search"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_toRightOf="@id/dateStart"
+                    android:src="@drawable/search"></ImageView>-->
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/group1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:text="아이콘을 눌러 의미를 확인 해 보세요."
+                android:textSize="25sp" />
+
+            <RelativeLayout
+                android:id="@+id/specific"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title2"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/border_background"
+                android:elevation="5dp">
+
+                <HorizontalScrollView
+                    android:id="@+id/icon_scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/icon1"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:src="@drawable/graph_smile"></ImageView>
+
+                        <ImageView
+                            android:id="@+id/icon2"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toRightOf="@id/icon1"
+                            android:src="@drawable/graph_up"></ImageView>
+
+                        <ImageView
+                            android:id="@+id/icon3"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/icon2"
+                            android:src="@drawable/graph_down"></ImageView>
+
+                        <ImageView
+                            android:id="@+id/icon4"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/icon3"
+                            android:src="@drawable/graph_empty"></ImageView>
+
+                        <ImageView
+                            android:id="@+id/icon5"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/icon4"
+                            android:src="@drawable/graph_up_down"></ImageView>
+
+                        <ImageView
+                            android:id="@+id/icon6"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toRightOf="@id/icon5"
+                            android:src="@drawable/graph_left_right2"></ImageView>
+
+                        <ImageView
+                            android:id="@+id/icon7"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toRightOf="@id/icon6"
+                            android:src="@drawable/ic_high_pulse"></ImageView>
+
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/speText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/icon_scroll"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textSize="20sp"></TextView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/specific"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="탐지 결과"
+                android:textSize="25dp"></TextView>
+
+
+            <ScrollView
+                android:id="@+id/scrView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/border_background"
+                android:elevation="5dp"
+                android:scrollbars="none">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/showRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:clipToPadding="false" />
+
+            </ScrollView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/scrView"></View>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

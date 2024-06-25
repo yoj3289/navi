@@ -1,0 +1,28 @@
+1. 보안을 위해 일부 파일들을 삭제했기 때문에 이 프로젝트를 그대로 실행하지 말고 코드를 복사 붙여넣기 해서 사용해야 함
+2. firebase연결을 위한 google-services.json은 제거됐음. 즉 코드를 사용하려는 측에서 파이어베이스를 연결하고 json파일을 받아서 app폴더 하위에 넣어야 함
+3. 복약지도와 만보기 기능은 하위버전 안드로이드에서 열리지 않을 수 있음(avd에서 실행 확인 후 구버전 작업은 if문 통해 가능함)
+4. 챗봇의 api키는 '공공데이터 포털'에서 직접 발급받아서 넣어야 함.
+5. 동일 내용을 깃허브에도 올린 관계로 저작권 문제 예방을 위해 폰트와 사진은 모두 삭제된 상태임
+
+MainActivity - 프래그먼트를 위한 틀
+HomeFragment - 홈화면
+DataBaseHelper - sqlite 연동 위해 필요한 코드
+DateValueFormatter - linchart관련 코드
+HomeFragment - 홈 프래그먼트(메인화면)
+InfoFragment - 인포 프래그먼트(추후 다른 화면으로 바꿀거임)
+MainActivity - 메인 액티비티, 아마 백그라운드 관련 내용들도 이 곳에 넣어야 할듯
+ManagementWeight - 홈프래그먼트 → 체중 → 상세검색 을 누르면 뜨는 화면(다이얼로그)
+MyMarkerView - linechart에서 그래프의 점을 누르면 내용을 띄우기 위한 코드
+NewsAdapter - 홈 프래그먼트에서 뉴스를 띄우기 위한 리사이클러뷰의 어댑터
+NewsItem - 홈 프래그먼트에서 뉴스를 띄우기 위한 리사이클러뷰의 아이템
+input_weight - 홈→체중→체중입력 시 나오는 다이얼로그. input_weight대신 이거 써야됨
+modify_weight - 홈→체중→체중수정 시 나오는 다이얼로그.
+chatMiniBi2 - 챗봇기능(대화 알고리즘)
+ChatMediAdapter, ChatMediItem - 채팅 리사이클러뷰에 사용
+ShowAll~~ - 체중 혈압 혈당 전체조회를 위한 기능
+혈압과 혈당은 weight가 press, sugar로 바뀌고 나머지는 동일
+
+
+
+
+

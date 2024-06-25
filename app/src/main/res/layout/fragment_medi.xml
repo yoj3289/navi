@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- fragment_b.xml -->
+
+<!-- fragment_internal.xml -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/weight_Management"
+        tools:context=".MedicationFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="복약지도"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/cafe24ssurround"
+                android:layout_gravity="left"
+                >
+            </TextView>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/custom_toolbar"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/alarmList">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/alarmInfo"
+                        android:orientation="vertical"
+                        >
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            ></View>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/mainInfo"
+                            android:text="현재 설정중인\n알람이 없어요!"
+                            android:textSize="35sp"
+                            android:gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            ></TextView>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="10dp">
+                        <ImageView
+                            android:layout_width="23dp"
+                            android:layout_height="23dp"
+                            android:src="@drawable/ic_plus"
+                            android:layout_marginRight="15dp"
+                            android:id="@+id/addAlarm"
+                            android:layout_marginTop="7dp">
+                        </ImageView>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_ai"
+                            android:layout_gravity="right"
+                            android:layout_marginRight="15dp"
+                            android:id="@+id/chatMiniBi">
+                        </ImageView>
+                        </LinearLayout>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="20dp"
+                            ></View>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:id="@+id/line1"
+                            android:layout_below="@id/inputPulse"
+                            android:background="@color/black"
+                            ></View>
+                    </LinearLayout>
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="알람목록"
+                        android:textSize="30sp"
+                        android:layout_marginTop="16dp"
+                        android:layout_below="@id/alarmInfo"
+                        android:id="@+id/alarmTitle"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="현재 저장된 알람들이에요."
+                        android:textSize="20sp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/alarmSubTitle"
+                        android:layout_below="@id/alarmTitle"
+                        android:textColor="#6E6E6E"></TextView>-->
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/alarmListRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+
+                        android:paddingBottom="4dp"
+                        android:clipToPadding="false"
+                        android:layout_below="@id/alarmInfo"
+
+                        />
+                </RelativeLayout>
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="알람 관리"
+                    android:id="@+id/manageTitle"
+                    android:layout_below="@id/alarmList"
+                    android:layout_marginTop="10dp"
+                    android:textSize="30sp"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="약먹을 시간, 나비에게 맡기세요."
+                    android:textSize="20sp"
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/manageSubTitle"
+                    android:layout_below="@id/manageTitle"
+                    android:textColor="#6E6E6E"></TextView>-->
+
+                <!--<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/manageSubTitle"
+                    android:background="@drawable/border_background"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:id="@+id/alarmFunc">
+                <RelativeLayout
+                    android:id="@+id/alarmAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_background"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/alarm_add"
+                            >
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="알람 추가"
+                            android:textSize="25sp"
+                            android:layout_marginTop="5dp">
+                        </TextView>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/alarmDel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alarmAdd"
+                    android:background="@drawable/border_background"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/alarm_cancel"
+                            >
+                        </ImageView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="알람 삭제"
+                            android:textSize="25sp"
+                            android:layout_marginTop="5dp">
+                        </TextView>
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>-->
+            </RelativeLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+</RelativeLayout>
+<!--<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/weight_Management"
+        tools:context=".HomeFragment">
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="앱 타이틀"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="16dp"/>
+
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/appTitle"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/black"
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="7dp"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+                <ImageView
+                    android:id="@+id/item_image2"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/scale" />
+                <TextView
+                    android:id="@+id/cardName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/item_image2"
+                    android:text="체중입력"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+
+</ScrollView>-->

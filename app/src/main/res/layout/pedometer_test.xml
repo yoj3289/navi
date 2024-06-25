@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="만보기"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="@font/cafe24ssurround"
+            android:layout_gravity="left"
+            >
+        </TextView>
+
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/group1">
+
+        <TextView
+            android:id="@+id/stepCountTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="55dp"
+            android:text="오늘의 걸음수"
+            android:textSize="35dp"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/stepCountView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0/10000"
+            android:textSize="30dp"
+            android:layout_below="@id/stepCountTag"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초기화"
+            android:layout_below="@id/stepCountView"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울에서 부산까지.."
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="5dp"></TextView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_korea"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp">
+            </ImageView>
+            <TextView
+                android:id="@+id/seoul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘 걸음을 기준으로 왕복 0.0006번\n누적 걸음을 기준으로 왕복 1번"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"></TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="지구를.."
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"></TextView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/ic_earth"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/earth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘 걸음을 기준으로 0.0006 바퀴\n누적 걸음을 기준으로 1 바퀴"
+                android:textSize="20sp"
+                android:layout_marginLeft="5dp"></TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/titleDateSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="걸음수가 너무 적으면 0으로 나올 수 있어요"
+            android:textColor="#6E6E6E"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"></TextView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/line1"
+            android:layout_below="@id/inputPulse"
+            android:background="@color/black"
+            ></View>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/walkListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="4dp"
+        android:clipToPadding="false"
+        android:layout_below="@id/group1"
+        />
+</RelativeLayout>
+
+
+
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="30dp"
+        android:text="StickCode 만보계"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/stepCountTag"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stepCountTag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="오늘의 걸음수 :"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toStartOf="@+id/stepCountView"
+        app:layout_constraintStart_toStartOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <TextView
+        android:id="@+id/stepCountView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/stepCountTag"
+        app:layout_constraintEnd_toEndOf="@+id/title"
+        app:layout_constraintStart_toEndOf="@+id/stepCountTag"
+        app:layout_constraintTop_toTopOf="@+id/stepCountTag" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="초기화"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/stepCountView"
+        app:layout_constraintStart_toStartOf="@+id/stepCountTag"
+        app:layout_constraintTop_toBottomOf="@+id/stepCountTag" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>-->

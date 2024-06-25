@@ -1,0 +1,297 @@
+<!-- res/layout/dialog_input.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/popup_bg2"
+    >
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="혈압을 입력하세요!"
+        android:textSize="25sp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@drawable/custom_card_background"
+        android:textColor="@color/white"
+        />
+
+
+    <TextView
+        android:id="@+id/howTo"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:text="1. 아침/저녁 각 2회씩 측정이 좋아요.
+        \n2. 휴식 후 정자세로 측정하세요.
+        \n3. 자세한 내용은 '설명'을 눌러보세요!"
+        android:textSize="20sp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:lineSpacingExtra="5dp"
+        android:background="@drawable/border_background_with_line" />
+
+    <TextView
+        android:id="@+id/dateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/howTo"
+        android:text="날짜"
+        android:textSize="27sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="9dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/sideTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateTitle"
+        android:text="위치"
+        android:textSize="27sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/pressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sideTitle"
+        android:text="혈압"
+        android:textSize="27sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/purseTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pressTitle"
+        android:text="맥박"
+        android:textSize="27sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="23dp"
+        />
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/howTo"
+        android:layout_toRightOf="@id/dateTitle"
+        android:id="@+id/dateAndTime"
+        android:weightSum="100">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_weight="50"
+        android:layout_height="50dp"
+        android:layout_below="@id/howTo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/dateTitle"
+        android:id="@+id/inputDate">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/editDateInput"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/inputDate"
+            android:id="@+id/getTime"
+            android:background="@drawable/border_background_forpress">
+            <TextView
+                android:id="@+id/categoryTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시간대"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintEnd_toStartOf="@id/categorySpinner"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <Spinner
+                android:entries="@array/시간대"
+                android:id="@+id/categorySpinner"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@+id/categoryTextView" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/inputSide"
+        android:layout_below="@id/dateAndTime"
+        android:layout_toRightOf="@id/sideTitle"
+        android:weightSum="100"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_background_forpress">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="왼팔"
+            android:textSize="25sp"
+            android:layout_weight="50"
+            android:textColor="#BDBDBD"
+            android:textAlignment="center"
+            android:layout_marginTop="5dp"
+            android:id="@+id/sideLeft"
+            >
+        </TextView>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="오른팔"
+            android:textSize="25sp"
+            android:layout_weight="50"
+            android:textColor="#BDBDBD"
+            android:textAlignment="center"
+            android:layout_marginTop="5dp"
+            android:id="@+id/sideRight"
+            >
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:weightSum="100"
+        android:id="@+id/inputPress"
+        android:layout_below="@id/inputSide"
+        android:layout_toRightOf="@id/pressTitle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="50dp"
+            android:layout_below="@id/inputSide"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/pressTitle"
+            android:id="@+id/inputSystolic"
+            android:layout_marginBottom="5dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_weight="50"
+                android:layout_height="45dp"
+                android:id="@+id/editSystolicInput"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:hint="수축기"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="50"
+            android:layout_height="50dp"
+            android:layout_below="@id/inputSide"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="0dp"
+            android:layout_toRightOf="@id/pressTitle"
+            android:id="@+id/inputDiastolic"
+            android:layout_marginBottom="5dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_weight="50"
+                android:layout_height="45dp"
+                android:id="@+id/editDiastolicInput"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:hint="이완기"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/inputPress"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@id/pressTitle"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/inputPulse">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:id="@+id/editPulseInput"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:id="@+id/line1"
+        android:layout_below="@id/inputPulse"
+        android:background="@color/black"
+        ></View>
+    <View
+        android:layout_width="1dp"
+        android:layout_height="50dp"
+        android:id="@+id/line2"
+        android:layout_below="@id/line1"
+        android:layout_centerHorizontal="true"
+        android:background="@color/black"></View>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputPulse"
+        android:weightSum="100"
+        >
+        <Button
+            android:id="@+id/btnNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editPulseInput"
+            android:background="@drawable/popup_btn_bg"
+            android:text="취소"
+            android:textSize="20sp"
+            android:textColor="@android:color/holo_red_light"
+            android:layout_weight="50" />
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editPulseInput"
+            android:layout_toRightOf="@id/btnNo"
+            android:background="@drawable/popup_btn_bg"
+            android:text="입력"
+            android:textSize="20sp"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_weight="50" />
+    </LinearLayout>
+
+</RelativeLayout>

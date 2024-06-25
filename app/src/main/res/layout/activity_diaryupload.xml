@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+
+    </include>
+
+
+    <EditText
+        android:id="@+id/et_post_title"
+        android:layout_width="351dp"
+        android:layout_height="45dp"
+        android:hint="제목"
+        android:padding="5dp"
+        android:privateImeOptions="defaultInputmode=korean"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/iv_upload_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+
+    </EditText>
+
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="33dp"
+        android:background="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.428">
+
+    </ImageView>
+
+    <android.widget.Button
+        android:id="@+id/btn_upload"
+        android:layout_width="59dp"
+        android:layout_height="32dp"
+        android:background="@drawable/edit_bg"
+        android:text="저장"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toEndOf="@+id/btn_back"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.375" />
+
+    <ImageView
+        android:id="@+id/iv_upload_image"
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:layout_marginTop="48dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/add_image_512"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+    </ImageView>
+
+    <EditText
+        android:id="@+id/et_upload_contents"
+        android:layout_width="382dp"
+        android:layout_height="232dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/button_round"
+        android:gravity="left"
+        android:hint="내용을 입력하세요"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_upload_image"
+        app:layout_constraintStart_toStartOf="@+id/iv_upload_image"
+        app:layout_constraintTop_toBottomOf="@+id/iv_upload_image">
+
+    </EditText>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="51dp"
+        android:layout_height="44dp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_upload_image"
+        app:layout_constraintEnd_toStartOf="@+id/et_post_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:srcCompat="@drawable/add_image_512" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

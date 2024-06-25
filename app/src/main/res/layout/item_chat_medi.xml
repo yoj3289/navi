@@ -1,0 +1,46 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/messageSender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="You"
+        android:layout_gravity="start|center_vertical"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:text="입력 메시지"
+        android:layout_gravity="start|center_vertical"
+        android:textSize="17sp"/>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/kgTitle"
+        android:layout_marginTop="3dp"
+        android:background="#BDBDBD"></View>
+
+    <!--<TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="입력 메시지"
+        android:background="@drawable/border_background"
+        android:backgroundTint="@color/mainColor"
+        android:textColor="@color/white"
+        android:layout_gravity="start|center_vertical"/>-->
+
+</LinearLayout>

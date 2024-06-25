@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="혈당_시간대">
+        <item>아침 식전(공복 8시간 이상)</item>
+        <item>아침 식후(식후 2시간 이상)</item>
+        <item>점심 식후(식후 2시간 이상)</item>
+        <item>저녁 식후(식후 2시간 이상)</item>
+    </string-array>
+
+</resources>

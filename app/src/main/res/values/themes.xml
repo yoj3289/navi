@@ -1,0 +1,111 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NaviProj" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/mainColor</item>
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.NaviProj" parent="Base.Theme.NaviProj" />
+
+    <!-- 회원정보, 날짜 수정 시 사용하는 스피너 레이아웃 디자인 -->
+    <style name="CustomDatePicker2" parent="Theme.AppCompat.Light.Dialog">
+        <!--This will change the window dialog background color-->
+        <item name="android:background">@drawable/cus_date_picker3</item>
+        <!-- This will change the date picker Day/Month/Year Text color-->
+        <item name="android:textColorPrimary">@android:color/holo_green_dark</item>
+        <!-- This will change the divider color -->
+        <item name="android:colorControlNormal">@android:color/holo_orange_dark</item>
+        <!-- This will set a custom style to the Date Picker eg: spinner mode style -->
+        <item name="android:datePickerStyle">@style/MySpinnerDatePickerStyle</item>
+        <!-- This will set a custom style to the dialog Button Positive-->
+        <item name="android:buttonBarPositiveButtonStyle">@style/MyDatePickerPositiveButtonStyle</item>
+        <!-- This will set a custom style to the dialog Button Negative-->
+        <item name="android:buttonBarNegativeButtonStyle">@style/MyDatePickerNegativeButtonStyle</item>
+        <!-- This will change the dialog Title Text color -->
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <!-- Custom  DatePicker Style-->
+    <style name="MySpinnerDatePickerStyle" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+    <!-- Custom DatePicker Button Style-->
+    <style name="MyDatePickerPositiveButtonStyle" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+    </style>
+
+    <style name="MyDatePickerNegativeButtonStyle" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="Theme.CustomCalendar" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:colorAccent">@color/mainColor</item>
+        <item name="android:windowBackground">@drawable/border_background</item>
+        <item name="colorControlActivated">@color/mainColor</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorPrimaryInverse">@color/white</item>
+        <!--<item name="android:background">@drawable/cus_date_picker3</item>
+        <item name="android:textColorPrimary">@android:color/holo_green_dark</item>
+        <item name="colorPrimaryDark">@color/white</item>-->
+        <!-- This will set a custom style to the dialog Button Positive-->
+        <item name="android:buttonBarPositiveButtonStyle">@style/MyDatePickerPositiveButtonStyle2</item>
+        <!-- This will set a custom style to the dialog Button Negative-->
+        <item name="android:buttonBarNegativeButtonStyle">@style/MyDatePickerNegativeButtonStyle2</item>
+        <!-- 다른 필요한 설정들을 추가 가능 -->
+    </style>
+
+    <!-- Custom DatePicker Button Style-->
+    <style name="MyDatePickerPositiveButtonStyle2" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+    </style>
+
+    <style name="MyDatePickerNegativeButtonStyle2" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
+    <style name="Theme.CustomTime" parent="Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/border_background</item>
+        <item name="android:textColorPrimary">@android:color/holo_green_dark</item>
+        <!-- This will change the divider color -->
+        <item name="android:colorControlNormal">@android:color/holo_orange_dark</item>
+        <item name="android:timePickerStyle">@style/MySpinnerTimePickerStyle</item>
+
+
+        <!-- This will set a custom style to the dialog Button Positive-->
+        <item name="android:buttonBarPositiveButtonStyle">@style/MyTimePickerPositiveButtonStyle2</item>
+        <!-- This will set a custom style to the dialog Button Negative-->
+        <item name="android:buttonBarNegativeButtonStyle">@style/MyTimePickerNegativeButtonStyle2</item>
+        <item name="android:textSize">26sp</item>
+        <!-- 다른 필요한 설정들을 추가 가능-->
+    </style>
+
+    <style name="MySpinnerTimePickerStyle" parent="android:Widget.Material.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
+
+    <!-- Custom DatePicker Button Style-->
+    <style name="MyTimePickerPositiveButtonStyle2" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@android:color/holo_blue_light</item>
+    </style>
+
+    <style name="MyTimePickerNegativeButtonStyle2" parent="android:Widget.Material.Button.Borderless">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@android:color/holo_red_light</item>
+    </style>
+
+
+
+</resources>

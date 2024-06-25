@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <!--android:fullBackupContent="@xml/backup_rules"-->
+    <!--아이콘 원래 코드-->
+    <!--android:icon="@mipmap/ic_launcher"-->
+    <!--android:roundIcon="@mipmap/ic_launcher_round"-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_icons"
+        android:label="나비"
+        android:roundIcon="@mipmap/ic_icons_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NaviProj"
+        tools:targetApi="31"
+
+        android:usesCleartextTraffic="true"
+        >
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".UserJoin">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity android:name=".ManagementWeight">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity android:name=".CustomCalender" android:theme="@style/Theme.CustomCalendar">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity
+            android:name=".input_weight" android:theme="@style/Theme.CustomCalendar">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+
+        <activity android:name=".alert_weight">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+
+        <activity
+            android:name=".ViewModel.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewModel.LoginActivity"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".ViewModel.NabiPlusActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ViewModel.UploadActivity"
+            android:exported="false" />
+        <activity android:name=".ViewModel.DiaryUploadActivity"
+            android:exported="false"/>
+        <activity android:name=".ViewModel.DiaryDetailActivity"
+            android:exported="false"/>
+
+        <activity android:name=".ShowNews"
+            android:exported="false"/>
+        <activity android:name=".alert_press"
+            android:exported="false"/>
+        <activity android:name=".alert_sugar"
+            android:exported="false"/>
+
+        <activity android:name=".ManagementPress">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+        <activity android:name=".ManagementSugar">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity android:name=".ShowAllWeight">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+        <activity android:name=".ShowAllPress">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+        <activity android:name=".ShowAllSugar">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity android:name=".makeMediAlarm">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity android:name=".MediAlarmMain">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <!--리시버는 activity가 아닌 receiver로 추가해야 함-->
+        <receiver android:name=".AReceiver"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <activity android:name=".AActivity">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity
+            android:name=".chatMiniBi2"
+            android:windowSoftInputMode="adjustUnspecified">
+            <!--키보드가 올라가도 채팅창이 유지되도록-->
+        </activity>
+
+        <activity android:name=".deleteMediAlarm">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity android:name=".modify_myInfo">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <activity android:name=".ShowManual">
+            <!-- 필요한 다른 설정들 -->
+        </activity>
+
+        <service
+            android:name=".StepCountingService"
+            android:enabled="true"
+            android:exported="true"
+            />
+
+        <!-- BroadcastReceiver 등록 -->
+        <receiver
+            android:name=".StepCountingService$StepResetReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+
+        <!---->
+
+
+
+    </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+
+</manifest>

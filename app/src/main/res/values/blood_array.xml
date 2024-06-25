@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="혈액형">
+        <item>혈액형</item>
+        <item>(Rh+)A형</item>
+        <item>(Rh+)B형</item>
+        <item>(Rh+)AB형</item>
+        <item>(Rh+)O형</item>
+
+        <item>(Rh-)A형</item>
+        <item>(Rh-)B형</item>
+        <item>(Rh-)AB형</item>
+        <item>(Rh-)O형</item>
+
+        <item>(모르겠음)A형</item>
+        <item>(모르겠음)B형</item>
+        <item>(모르겠음)AB형</item>
+        <item>(모르겠음)O형</item>
+
+    </string-array>
+
+</resources>

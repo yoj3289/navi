@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/weight_Management"
+        tools:context=".HomeFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="체중관리"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/cafe24ssurround"
+                android:layout_gravity="left">
+            </TextView>
+        </androidx.appcompat.widget.Toolbar>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@id/custom_toolbar"
+            android:id="@+id/showText"
+            android:background="@drawable/border_background"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:elevation="5dp">
+        <TextView
+            android:id="@+id/showName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="홍길동님은 현재 "
+            android:textSize="20sp"
+            >
+        </TextView>
+        <TextView
+            android:id="@+id/showBMI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/showName"
+            android:layout_marginLeft="10dp"
+            android:text="정상 체중 "
+            android:textSize="20sp"
+            >
+        </TextView>
+
+        </RelativeLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="500dp"
+            android:layout_height="300dp"
+            android:background="@drawable/border_background"
+            android:layout_below="@id/showText"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:weightSum="1"
+            android:elevation="5dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineChart"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_below="@id/lineChart"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/black"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="12dp"
+                    android:layout_weight="50"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/item_image"
+                            android:layout_width="57dp"
+                            android:layout_height="57dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/detail"
+                            />
+
+                        <TextView
+                            android:id="@+id/cardName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/item_image"
+                            android:layout_marginTop="10dp"
+                            android:text="상세검색"
+                            android:textSize="25sp"
+                            />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/card_view"
+                    android:layout_below="@id/lineChart"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/black"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="12dp"
+
+                    android:layout_weight="50"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/item_image2"
+                            android:layout_width="57dp"
+                            android:layout_height="57dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/scale" />
+
+                        <TextView
+                            android:id="@+id/cardName2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@id/item_image2"
+                            android:text="체중입력"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="5dp"
+                            />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_below="@id/lineChart"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/black"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="12dp"
+                    android:layout_weight="50"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/item_image6"
+                            android:layout_width="57dp"
+                            android:layout_height="57dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_alert"
+                            />
+
+                        <TextView
+                            android:id="@+id/cardName6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/item_image6"
+                            android:layout_marginTop="10dp"
+                            android:text="알림센터"
+                            android:textSize="25sp"
+                            />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/card_view"
+                    android:layout_below="@id/lineChart"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/black"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="12dp"
+
+                    android:layout_weight="50"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/item_image3"
+                            android:layout_width="57dp"
+                            android:layout_height="57dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_edit" />
+
+                        <TextView
+                            android:id="@+id/cardName3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@id/item_image3"
+                            android:text="체중수정"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="5dp"
+                            />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_view5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_below="@id/lineChart"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/black"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="12dp"
+                    android:layout_weight="50"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="-10dp"
+                        >
+
+                        <ImageView
+                            android:id="@+id/item_image5"
+                            android:layout_width="57dp"
+                            android:layout_height="57dp"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_guide"
+                            />
+
+                        <TextView
+                            android:id="@+id/cardName5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@id/item_image5"
+                            android:layout_marginTop="10dp"
+                            android:text="사용법"
+                            android:textSize="25sp"
+                            />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/card_view4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/card_view"
+                    android:layout_below="@id/lineChart"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/black"
+                    card_view:cardBackgroundColor="@color/white"
+                    card_view:cardCornerRadius="12dp"
+
+                    android:layout_weight="50"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="center"
+                        >
+
+                        <ImageView
+                            android:id="@+id/item_image4"
+                            android:layout_width="57dp"
+                            android:layout_height="57dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="0dp"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/ic_delete" />
+
+                        <TextView
+                            android:id="@+id/cardName4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_toRightOf="@id/item_image4"
+                            android:text="체중삭제"
+                            android:textSize="25sp"
+                            android:layout_marginLeft="5dp"
+                            />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineChart"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_below="@id/lineChart"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/black"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                android:layout_marginBottom="10dp"
+                >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <ImageView
+                        android:id="@+id/item_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/detail"
+                        />
+
+                    <TextView
+                        android:id="@+id/cardName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/item_image"
+                        android:layout_marginTop="10dp"
+                        android:text="상세검색"
+                        android:textSize="25sp"
+                        />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_below="@id/lineChart"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/black"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="12dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <ImageView
+                        android:id="@+id/item_image2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/scale" />
+
+                    <TextView
+                        android:id="@+id/cardName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@id/item_image2"
+                        android:text="체중입력"
+                        android:textSize="25sp" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>-->
+        <!--원래 버튼 디자인-->
+        <!--<com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/lineChart"
+
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black"
+
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="-10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/detail"
+                    />
+
+                <TextView
+                    android:id="@+id/cardName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/item_image"
+                    android:layout_marginTop="10dp"
+                    android:text="상세검색"
+                    android:textSize="25sp"
+                    />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view2"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/card_view"
+            android:layout_below="@id/lineChart"
+
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black"
+
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="12dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image2"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/scale" />
+
+                <TextView
+                    android:id="@+id/cardName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/item_image2"
+                    android:text="체중입력"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view3"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/card_view"
+            android:layout_below="@id/card_view2"
+
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black"
+
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="12dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image3"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_edit" />
+
+                <TextView
+                    android:id="@+id/cardName3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/item_image3"
+                    android:text="체중수정"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view4"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@id/card_view"
+            android:layout_below="@id/card_view3"
+
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black"
+
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="12dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image4"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_delete" />
+
+                <TextView
+                    android:id="@+id/cardName4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/item_image4"
+                    android:text="체중삭제"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view5"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/card_view4"
+            android:layout_below="@id/card_view6"
+
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black"
+
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="12dp"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image5"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_guide" />
+
+                <TextView
+                    android:id="@+id/cardName5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/item_image5"
+                    android:text="사용법"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view6"
+            android:layout_width="190dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/card_view4"
+            android:layout_below="@id/card_view"
+
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/black"
+
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="12dp"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image6"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_alert" />
+
+                <TextView
+                    android:id="@+id/cardName6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/item_image6"
+                    android:text="알림센터"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>-->
+    </RelativeLayout>
+</ScrollView>
+
+<!--<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/weight_Management"
+        tools:context=".HomeFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/mainColor"
+            app:title="체중관리"
+            app:titleTextColor="@color/white"
+            ></androidx.appcompat.widget.Toolbar>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@id/custom_toolbar"
+            android:id="@+id/showText"
+            android:background="@drawable/border_background"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+            <TextView
+                android:id="@+id/showName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="홍길동님은 현재 "
+                android:textSize="20sp"
+                >
+            </TextView>
+            <TextView
+                android:id="@+id/showBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/showName"
+                android:layout_marginLeft="10dp"
+                android:text="정상 체중 "
+                android:textSize="20sp"
+                >
+            </TextView>
+
+        </RelativeLayout>
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_width="500dp"
+            android:layout_height="250dp"
+            android:background="@drawable/border_background"
+            android:layout_below="@id/showText"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:weightSum="1"
+            />
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view"
+            android:layout_width="500dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/lineChart"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/black"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="7dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/detail"
+                    />
+
+                <TextView
+                    android:id="@+id/cardName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_toRightOf="@id/item_image"
+                    android:text="상세검색"
+                    android:textSize="30sp"
+                    />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view2"
+            android:layout_width="500dp"
+            android:layout_height="95dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_below="@id/card_view"
+            app:strokeWidth="3dp"
+            app:strokeColor="@color/black"
+            card_view:cardBackgroundColor="@color/white"
+            card_view:cardCornerRadius="12dp"
+            card_view:cardElevation="7dp"
+            >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/item_image2"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/scale" />
+
+                <TextView
+                    android:id="@+id/cardName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_toRightOf="@id/item_image2"
+                    android:text="체중입력"
+                    android:textSize="30sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</ScrollView>-->
